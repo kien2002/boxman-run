@@ -19,7 +19,6 @@ public class SlideWall : MonoBehaviour {
     void Update()
     {
         //cho di chuyển 
-        transform.Translate(Vector3.up * speed * Time.deltaTime);
         transform.Translate(Vector3.left * speed * Time.deltaTime);
         CountCoin.instance.MS += Time.deltaTime;
         if (Mathf.RoundToInt(CountCoin.instance.MS) >= 1010)

@@ -128,26 +128,26 @@ public class PlayerScript : MonoBehaviour {
         else if(collision.gameObject.tag == "Dead")
         {
             // nhân vật hs
-            transform.position = new Vector3(-8, 4, 0);
-            //audioSource.Playsound("destroy");
-            //Destroy(gameObject);
-            
-            //if (BntPause.insance != null)
-            //{
-            //    BntPause.insance.panelDead.SetActive(true);
-            //}
-            //Time.timeScale = 0;
-            //if (PlayerPrefs.HasKey("highscore"))
-            //{
-            //    if (PlayerPrefs.GetFloat("highscore") < CountCoin.instance.Total_coin)
-            //    {
-            //        PlayerPrefs.SetFloat("highscore", CountCoin.instance.Total_coin);
-            //    }
-            //}
-            //else
-            //{
-            //    PlayerPrefs.SetFloat("highscore", CountCoin.instance.Total_coin);
-            //}
+            //transform.position = new Vector3(-8, 4, 0);
+            audioSource.Playsound("destroy");
+            Destroy(gameObject);
+
+            if (BntPause.insance != null)
+            {
+                BntPause.insance.panelDead.SetActive(true);
+            }
+            Time.timeScale = 0;
+            if (PlayerPrefs.HasKey("highscore"))
+            {
+                if (PlayerPrefs.GetFloat("highscore") < CountCoin.instance.Total_coin)
+                {
+                    PlayerPrefs.SetFloat("highscore", CountCoin.instance.Total_coin);
+                }
+            }
+            else
+            {
+                PlayerPrefs.SetFloat("highscore", CountCoin.instance.Total_coin);
+            }
         }
 
     }
